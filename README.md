@@ -28,6 +28,7 @@ I implemented this with original Work-Efficient GPU Scan. To enable this setting
   <br/>
   <b>Figure 1:</b> Block Size Optimization
 </p>
+
 ### Roughly optimize the block sizes of each of your implementations for minimal run time on your GPU
 I do roughly Block Size Optimization on size $2^{23}$, and run each blocksize 3 times to get the average runtime. It shows that, when block size = 32, all three implementations will get the worst runtime. When block size = 64, 128, 256, their perfromances are quite similar, the difference of runtime is very small. For Naive scan and Work Efficient Scan, when increasing block size to 512 and 1024, the performance will be a little bit worse than block size = 64, 128, 256's. For Work Efficient Stream Compaction, all performances are close when block size is larger than 32. So, for all 3 implementations, I set block size = 256.
 
